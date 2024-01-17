@@ -1,0 +1,41 @@
+.nav-pills {
+    display: flex;
+    justify-content: center;
+    padding-right: 60px;
+}
+
+.link-topo {
+    display: block;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    color: #FFF !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.link-topo:hover {
+    color:#ff0000 !important;
+}
+
+.fa-adjust {
+    margin-left: 8px; 
+    margin-top: 14px; 
+    font-size: 13px;
+}
+
+.second-container {
+    padding-left: 100px;
+}
+
+.text-white {
+    font-size: 21px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 3px;
+    padding-left: 5px;
+}
+
+@media (max-width: 991px) {
+    #barra-de-acessibilidade {
+        display: none;
+    }
+}

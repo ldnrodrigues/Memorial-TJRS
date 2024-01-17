@@ -1,0 +1,150 @@
+/*
+Theme Name: Memorial TJRS
+Theme URI:
+Author: Tribunal de Justiça do Estado do Rio Grande do Sul
+Author URI: https://www.tjrs.jus.br
+Description: Site do Memorial do Rio Grande do Sul.
+Version: 1.0
+Text Domain: memorial-tjrs
+Tags: Memorial, Museu, História
+*/
+
+.navbar__atalhos {
+    background-color: #e5e5e5 !important;
+}
+
+.hot_sites{
+    color: #555!important;
+    font-weight: bold;
+}
+
+.hot_sites:hover{
+    color: #940000!important;
+}
+
+.container-topo {
+    display: flex;
+    justify-content: center;
+}
+
+.icones-container,
+.first-container {
+    display: flex;
+}
+
+.icones-container {
+    margin-left: 42px;
+}
+
+.icones a {
+    display: inline-block;
+    filter: grayscale(100%); 
+    transition: filter 0.3s ease;
+    margin-left: 13px;
+    margin-top: 5px;
+}
+
+.icones a:hover {
+    filter: grayscale(0%);
+}
+
+.memorial-icon {
+    display: none;
+}
+
+.navbar {
+    background-color: #8B0000;
+    font-size: 10pt;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar ul li ul {
+    background-color: #8B0000;
+    position: absolute;
+    display: none;
+    z-index: 999;
+}
+
+ul.nav li a {
+    padding: 15px;
+    color: #ffffff;
+    transition: all .5s;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+}
+
+ul.nav li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Espessura da linha de destaque */
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff; /* Cor da linha de destaque */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+ul.nav li a:hover:after {
+    transform: scaleX(1);   
+}
+
+#menu ul li a:hover {
+    color: white;
+}
+
+@media (max-width: 991px) {
+
+    .first-container {
+        display: none;
+    }
+
+    .banner-image {
+        display: none;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .icones-container {
+        margin: 0 auto;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        
+    }
+
+    .navbar {
+        background: linear-gradient(to top, #372624, #8c2e2e);
+        transition: transform 0.3s;
+        transform: translateY(0);
+    }
+
+    .navbar.hidden {
+        transform: translateY(-100%);
+    }
+
+    .navbar.hide {
+        transform: translateY(-100%);
+    }
+
+    .memorial-icon {
+        width: 240px;
+        display: block;
+        float: left;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1199px) {
+    .desktop-navbar {
+        height: 50px; /* Altura desejada para dispositivos desktop */
+        width: auto;
+    }
+}

@@ -1,0 +1,113 @@
+/* ..................................................................................................... */
+/* ALTO CONTRASTE */
+
+.contrast .icones a {
+    filter: none;
+}
+
+.contrast .icones a:hover {
+    filter: grayscale(100%) !important;
+}
+
+.contrast,
+.contrast nav,
+.contrast div,
+.contrast header,
+.contrast footer,
+.contrast section,
+.contrast main,
+.contrast aside,
+.contrast article {
+    background: black !important;
+    color: white !important;
+}
+
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast h6,
+.contrast p,
+.contrast label,
+.contrast strong,
+.contrast em,
+.contrast cite,
+.contrast q,
+.contrast i,
+.contrast b,
+.contrast u,
+.contrast span {
+    color: white !important;
+}
+
+.contrast a {
+    color: yellow !important;
+}
+
+.contrast i {
+    color: yellow !important;
+}
+
+.contrast .btn-lg {
+    background: black !important;
+    color: yellow !important;
+    box-shadow: 0 4px 0 yellow !important;
+}
+
+.contrast .btn-lg:hover {
+    color: white !important;
+    box-shadow: 0 4px 0 white !important;
+}
+
+.contrast ::selection {
+    background-color: yellow;
+    color: black;
+}
+
+.contrast .fa-arrow-up {
+    color: black !important;
+}
+
+.contrast .to-the-top {
+    background: yellow;
+}
+
+.contrast hr {
+    border-top: 4px solid yellow !important; 
+}
+
+.contrast input[type=text],
+.contrast input[type=password],
+.contrast input[type=url],
+.contrast input[type=search],
+.contrast input[type=email],
+.contrast input[type=tel],
+.contrast input[type=date],
+.contrast input[type=month],
+.contrast input[type=week],
+.contrast input[type=datetime],
+.contrast input[type=datetime-local],
+.contrast textarea,
+.contrast input[type=number] {
+    background: black !important;
+    border: 1px solid white !important;
+    color: white !important;
+}
+
+.contrast img.on-contrast-force-gray {
+    filter: grayscale(100%) contrast(120%);
+}
+
+.contrast img.on-contrast-force-white {
+    filter: brightness(0) invert(1);
+}
+
+.contrast a:link:hover {
+    color: #ff0000 !important;
+}
+
+.contrast .card {
+    border-color: yellow !important;
+    border-radius: 0;
+}

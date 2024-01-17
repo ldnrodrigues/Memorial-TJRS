@@ -1,0 +1,84 @@
+/*
+Theme Name: Memorial TJRS
+Theme URI:
+Author: (Léozinho) Tribunal de Justiça do Estado do Rio Grande do Sul
+Author URI: https://www.tjrs.jus.br
+Description: Site do Memorial do Rio Grande do Sul.
+Version: 1.0
+Text Domain: memorial-tjrs
+Tags: Memorial, Museu, História
+*/
+
+@import url("./css's/style-header.css");
+@import url("./css's/style-pagina-de-noticias.css");
+@import url("./css's/style-footer.css");
+@import url("./css's/style-carrossel.css");
+@import url("./css's/style-cards.css");
+@import url("./css's/style-barra-de-acessibilidade.css");
+@import url("./css's/contrast.css");
+@import url("./css's/lightbox.css");
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.content {
+    flex: 1;
+}
+
+#breadcrumb {
+    font-size: 10pt;
+}
+
+#breadcrumb a {
+    color: #940202; 
+    text-decoration: none;
+}
+
+#breadcrumb a:hover {
+    color: #940202; 
+    text-decoration: underline;
+}
+
+a:link {
+    color:#940202;
+    text-decoration: none;
+}
+
+a:visited { 
+    color: #940202; 
+}
+
+a:hover {
+    color: #ff0000;
+    text-decoration: none;  
+}
+
+::selection {
+    background-color: #940202;
+    color: #ffffff;
+}
+
+/*padding entre o body e a navbar */
+.my-custom-padding {
+    padding-top: 50px; /* Adicione o valor de padding superior desejado aqui */
+}
+
+/*faz com que as imagens flutuem quando é posicionado texto ao lado dela diretamente no painel de edição de páginas do wordpress*/
+img.alignright {float:right; margin:0 0 1em 1em}
+img.alignleft {float:left; margin:0 1em 1em 0}
+img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+a img.alignright {float:right; margin:0 0 1em 1em}
+a img.alignleft {float:left; margin:0 1em 1em 0}
+a img.aligncenter {display: block; margin-left: auto; margin-right: auto}
+
+/* Remover o botão no layout mobile */
+@media (max-width: 992px) {
+    .to-the-top {
+        display: none;
+    }
+}

@@ -1,0 +1,41 @@
+/*
+Theme Name: Memorial TJRS
+Theme URI:
+Author: Tribunal de Justiça do Estado do Rio Grande do Sul
+Author URI: https://www.tjrs.jus.br
+Description: Site do Memorial do Rio Grande do Sul.
+Version: 1.0
+Text Domain: memorial-tjrs
+Tags: Memorial, Museu, História
+*/
+
+/* Oculta os números dos indicadores do carrossel */
+.custom-indicators li {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: none;
+    position: relative;
+}
+
+@media (max-width: 761px) {
+    #custom-carousel {
+        margin-bottom: -30px;
+    }
+
+    .carousel-inner .carousel-item img {
+        width: 750px;
+        height: 193px; 
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 1936px) {
+    .carousel-inner .carousel-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+

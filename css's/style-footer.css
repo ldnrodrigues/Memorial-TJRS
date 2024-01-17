@@ -1,0 +1,131 @@
+/*
+Theme Name: Memorial TJRS
+Theme URI:
+Author: Tribunal de Justiça do Estado do Rio Grande do Sul
+Author URI: https://www.tjrs.jus.br
+Description: Site do Memorial do Rio Grande do Sul.
+Version: 1.0
+Text Domain: memorial-tjrs
+Tags: Memorial, Museu, História
+*/
+
+/*Footer CSS*/
+
+footer {
+    background: linear-gradient(to bottom, #5E0000, #490001);
+    font-size: 14px;
+    color: #ffffff;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.titulo-footer {
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.foo {
+    float:left;
+}
+.bar {
+    padding-left: 105px;
+}
+
+.contato a:link {
+    color: #ffffff;
+}
+
+.contato a:hover {
+    color: #DE0000;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.redes-sociais {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.redes-sociais:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.icones-sociais a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.icones-sociais a:hover {
+    transform: translateY(-2px);
+}
+
+.maps,
+.email,
+.phone,
+.social {
+    color: #ffffff;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.to-the-top {
+    background: #940202;
+    border-radius: 50%;
+    border-color: #940202;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    position: fixed;
+    right: 70px;
+    bottom: 115px;
+    width: 50px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.to-the-top.show {
+    opacity: 1;
+}
+
+.fa {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.to-the-top:hover .fa {
+    transform: translateY(-5px);
+}
+
+/* Reduza a quantidade de informações em dispositivos móveis, se necessário */
+@media (max-width: 1339px) {
+    footer {
+        text-align: center;
+    }
+    
+    .titulo-footer {
+        font-size: 18px; /* Reduza o tamanho da fonte do título, se necessário */
+    }
+
+    .foo {
+        float:none;
+    }
+
+    .bar {
+        padding-left: 0;
+    }
+    
+    #LogoTJ150 {
+        padding-top: 10px;
+    }
+}
