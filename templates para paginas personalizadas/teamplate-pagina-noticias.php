@@ -44,8 +44,8 @@
                 </div>
 
                 <div class="card-body">
-                    <a href="<?php the_permalink(); ?>" id="title-link">
-                        <h4 class="title-black padding-custom">
+                    <a href="<?php the_permalink(); ?>">
+                        <h4 class="title-link padding-custom">
                             <?php
                             // Ajuste do comprimento do título e adição de "..."
                             $title = get_the_title();
@@ -57,7 +57,10 @@
                             ?>
                         </h4>
                     </a>
-                    <p class="custom-text-color data-position">por Memorial do Judiciário do RS<br><span><?php echo date('d/m/Y', get_post_time()); ?></span></p>
+                    <p class="custom-text-color data-position">
+                        por <?php the_author(); ?><br>
+                        <span><?php echo get_the_date('d/m/Y'); ?></span>
+                    </p>
                 </div>
 
             </div>
