@@ -21,11 +21,29 @@
 
     <?php the_content(); ?>
 
-      <div class="card-eventos">
-        <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/acoes-e-eventos/formando-geracoes/;">Formando Gerações</a>
-      </div>
+<div class="row">
+  <div class="col col-sm-3">
+  <div class="notification">
+    <div class="notiglow"></div>
+    <div class="notiborderglow"></div>
+    <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/acoes-e-eventos/exposicoes-virtuais/" class="notititle">Exposições Virtuais</a>
+    <div class="notibody">Página sem Conteúdo Atualmente</div>
+  </div>
+</div>
 
-    </div>
-  <!-- /.container -->
+<div class="col col-sm-3">
+  <div class="notification card-2">
+    <div class="notiglow"></div>
+    <div class="notiborderglow"></div>
+    <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/acoes-e-eventos/formando-geracoes/" class="notititle">Formando Gerações</a>
+    <div class="notibody">O Programa Formando Gerações promove [...]</div>
+  </div>
+</div>
+
+<!-- /.row -->
+</div>
+
+</div>
+<!-- /.container -->
 
 <?php get_footer(); ?>
