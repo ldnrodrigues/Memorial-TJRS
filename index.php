@@ -123,6 +123,7 @@
                             <div class="post-text custom-padding-text">
                         <?php the_excerpt(); ?>
                     </div>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-lg" type="button" id="botao-noticias-1">Leia Mais</a>
                 <p class="custom-text-color">por Memorial do Judiciário do RS<br><span><?php echo date('d/m/Y', get_post_time()); ?></span></p>
             </div>
         </div>
@@ -143,7 +144,7 @@
 <hr style="border-top: 2px dashed red; width: 68%; margin: 0 auto;">
 
 <div class="d-flex justify-content-center">
-    <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/noticias/"><button class="btn btn-lg" type="button" id="botao-noticias">Veja Todas as Notícias</button></a>
+    <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/noticias/"><button class="btn btn-lg" type="button" id="botao-noticias-2">Veja Todas as Notícias</button></a>
 </div>
 
 <?php get_footer(); ?>
