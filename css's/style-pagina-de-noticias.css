@@ -60,6 +60,7 @@ Tags: Memorial, Museu, História
     padding: 12px 20px;
     margin-top: 5px;
     margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #botao-noticias-1:hover {
@@ -81,6 +82,7 @@ Tags: Memorial, Museu, História
     padding: 12px 20px;
     margin-top: 30px;
     margin-bottom: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #botao-noticias-2:hover {
@@ -142,6 +144,10 @@ Tags: Memorial, Museu, História
     .custom-padding-text {
         padding-left: 20px;
     }
+
+    #botao-noticias-1 {
+        margin-left: 20px;
+    }
 }
 
     .title-link {
@@ -150,7 +156,7 @@ Tags: Memorial, Museu, História
         text-decoration: none;
         letter-spacing: -1px;
         margin-bottom: -10px;
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .title-link:hover {
@@ -205,3 +211,7 @@ Tags: Memorial, Museu, História
     .custom-hr {
         border-top: 2px solid #8B0000;
     }
+
+
+
+
