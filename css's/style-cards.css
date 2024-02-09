@@ -9,31 +9,209 @@ Text Domain: memorial-tjrs
 Tags: Memorial, Museu, História
 */
 
-/*Footer CSS*/
+/*CSS da página de notícia */
 
-.card-eventos {
-    border: 1px solid #ccc;
-    border-top: 4px solid crimson; /* Adicionando a cor vermelha na borda superior */
-    border-radius: 5px;
-    padding: 20px;
-    margin: 25px;
-    width: 300px;
-    display: inline-block;
-    float: left; 
-}
-
-.card-eventos a {
-    text-align: center;
+#title-link {
     text-decoration: none;
-    color: crimson;
-    font-weight: bold;
-    font-size: 20px;
-    display: block; /* Para centralizar o texto verticalmente no card */
+    letter-spacing: -1px;
+    color: #000000;
+    transition: color 0.3s;
 }
 
-.card-eventos a:hover {
+#title-link:hover {
+    color: red;
     text-decoration: underline;
-    color: crimson;
+}
+
+.recentes {
     font-weight: bold;
 }
+
+.custom-text-color {
+    color: #8B0000;
+}
+
+#image-zoom {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+#image-zoom img {
+    transition: transform 0.3s;
+}
+
+#image-zoom:hover img {
+    transform: scale(1.1); /* Ajuste o valor para controlar o zoom */
+    cursor: pointer;
+}
+
+#botao-noticias-1 {
+    background-color: #8B0000;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #640f02;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#botao-noticias-1:hover {
+    background-color: #640f02;
+    box-shadow: 0 4px 0 #8B0000;
+}
+
+#botao-noticias-2 {
+    background-color: #8B0000;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #640f02;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#botao-noticias-2:hover {
+    background-color: #640f02;
+    box-shadow: 0 4px 0 #8B0000;
+}
+
+.post-thumbnail img {
+    width: 720px !important;
+    height: 420px !important;
+}
+
+.card-thumbnail img {
+    width: 450px !important;
+    height: 300px !important;
+}
+
+.padding-custom {
+    padding-left: 10px;
+}
+
+.data-position {
+    padding-left: 10px;
+}
+
+@media (max-width: 991px) {
+    .recentes {
+        font-size: 37px;
+        text-align: center;
+    }
+
+    .custom-hr {
+        width: 93% !important;
+        margin-left: 15px;
+    }
+    
+    .post-thumbnail img {
+        width: 45   0px !important;
+        height: 320px !important;
+        display: block; /* Necessário para o margin funcionar */
+        margin-left: auto; /* aqui */
+        margin-right: auto; /* e aqui */
+    }
+    
+    .card-thumbnail img {
+        width: 515px !important;
+        height: 310px !important;
+    }
+
+    .custom-padding {
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .custom-text-color {
+        padding-left: 20px;
+    }
+
+    .custom-padding-text {
+        padding-left: 20px;
+    }
+
+    #botao-noticias-1 {
+        margin-left: 20px;
+    }
+}
+
+    .title-link {
+        color: #ffffff;
+        transition: color 0.3s;
+        text-decoration: none;
+        letter-spacing: -1px;
+        margin-bottom: -10px;
+        font-size: 20px;
+    }
+
+    .title-link:hover {
+        color: #ff0000;
+        text-decoration: underline;
+    }
+
+    .card {
+        border: 1px solid #ddd;
+        transition: box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); /* Sobreposição de gradiente escuro */
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .card-thumbnail {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .card-body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        z-index: 2;
+    }
+
+    .data-position {
+        color: #ffffff;
+        font-size: 13px;
+        margin-bottom: 0px;
+    }
+
+    .custom-hr {
+        border-top: 2px solid #8B0000;
+    }
+
+
+
 
