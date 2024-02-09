@@ -53,11 +53,11 @@
             </ol>
 
             <button class="carousel-control-prev custom-control-button" role="button" data-bs-target="#custom-carousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon d-none d-md-inline"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next custom-control-button" role="button" data-bs-target="#custom-carousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon d-none d-md-inline"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Próximo</span>
             </button>
         </div>
@@ -98,6 +98,7 @@
                 if ($count > 0) :
                     ?>
                     <hr class="d-none d-md-block" style="border-top: 4px solid red;">
+                    <hr class="d-block d-sm-none custom-hr" style="border-top: 4px solid red;">
                 <?php
                 endif;
                 ?>
@@ -120,11 +121,15 @@
                                         <span><?php the_title(); ?></span>
                                     </h2>
                                 </a>
+                                <hr style="color: red;">
                             <div class="post-text custom-padding-text">
                         <?php the_excerpt(); ?>
                     </div>
                     <a href="<?php the_permalink(); ?>" class="btn btn-lg" type="button" id="botao-noticias-1">Leia Mais</a>
-                <p class="custom-text-color">por Memorial do Judiciário do RS<br><span><?php echo date('d/m/Y', get_post_time()); ?></span></p>
+                    <p class="custom-text-color">
+                        por <?php the_author(); ?><br>
+                        <span><?php echo get_the_date('d/m/Y'); ?></span>
+                    </p>
             </div>
         </div>
     </div>
