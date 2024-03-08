@@ -26,6 +26,7 @@
     <!--Bootstrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
     <?php wp_head(); ?>
@@ -37,6 +38,7 @@
         min-height: 100vh;
         margin: 0;
         letter-spacing: -0.5px;
+        font-size: 17px;
       } 
       .content {
         flex: 1;
@@ -53,7 +55,7 @@
         text-decoration: underline;
       }
       .my-custom-padding {
-        padding-top: 150px; /* Adicione o valor de padding superior desejado aqui */
+        padding-top: 8rem; /* Adicione o valor de padding superior desejado aqui */
       }
       .wp-block-buttons {
         margin-top: 20px;
@@ -180,39 +182,29 @@
 
 <h1 class="mb-4"><?php the_title(); ?></h1>
 
-    <?php the_content(); ?>
+  <?php the_content(); ?>
 
     <div class="wp-block-buttons alignwide is-layout-flex wp-block-buttons-is-layout-flex">
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/">Início</a></div>
+      <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/">Início</a></div>
+        <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/acessibilidade-maquete-tatil/" style="border-radius:10px;background:linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 23%,rgb(65,88,208) 100%);">Acessibilidade</a></div>
+          <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/publicacoes-nas-redes-sociais/" style="border-radius:10px;background:linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%);">Detalhamento do edifício</a></div>
+        <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/podcast/" style="border-radius:10px;background:linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 43%);">Podcast</a></div>
+      <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/webinario/" style="border-radius:10px;background:linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);">Webinário</a></div>
+    <div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/visita-virtual-filme/" style="border-radius:10px;background:linear-gradient(135deg,rgb(3,130,113) 0%,rgb(40,116,252) 100%);">Visita Virtual – filme</a></div>
+  </div>
 
-
-
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/acessibilidade-maquete-tatil/" style="border-radius:10px;background:linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 23%,rgb(65,88,208) 100%);">Acessibilidade</a></div>
-
-
-
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/publicacoes-nas-redes-sociais/" style="border-radius:10px;background:linear-gradient(135deg,rgb(11,192,224) 0%,rgb(128,208,199) 100%);">Detalhamento do edifício</a></div>
-
-
-
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/podcast/" style="border-radius:10px;background:linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 43%);">Podcast</a></div>
-
-
-
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/webinario/" style="border-radius:10px;background:linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);">Webinário</a></div>
-
-
-
-<div class="wp-block-button"><a class="wp-block-button__link" href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/visita-virtual-filme/" style="border-radius:10px;background:linear-gradient(135deg,rgb(3,130,113) 0%,rgb(40,116,252) 100%);">Visita Virtual – filme</a></div>
-</div>
   <div class="site-info custom-padding">
 
-				<a class="site-name " href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/" rel="home">Visita ao Palácio da Justiça do RS</a> 
-        <a>/</a> 
-        <a class="site-second-name " href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/" rel="home">Voltar ao Memorial</a> 
+	  <a class="site-name " href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/visita-ao-palacio-modernista/" rel="home">Visita ao Palácio da Justiça do RS</a> 
+      <a>/</a> 
+        <a class="site-second-name " href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/" rel="home">Voltar ao Memorial</a>
+
         <button id="scrollToTopBtn" class="to-the-top" onclick="scrollToTop()" title="Voltar ao Topo">
             <i class="fa fw fa-arrow-up"></i></button>
         </button>
+
+      </div>
+    </div>
 
     <script>
         function scrollToTop() {
@@ -290,6 +282,20 @@
     }
 });
 
+    </script>
+
+        <!-- VLibras-->
+        <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 	</div><!-- .site-info -->
     </div>
