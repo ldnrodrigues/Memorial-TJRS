@@ -34,7 +34,7 @@
         ?>
 
         <div class="col-md-4 mb-5">
-            <div class="card secondary-emphasis">
+            <div class="card-1 secondary-emphasis">
                 <div class="card-noticias">
                     <div class="card-thumbnail">
                         <a href="<?php echo get_permalink(); ?>" id="image-zoom">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body-1" style="background:none !important;">
                     <a href="<?php the_permalink(); ?>">
                         <h4 class="title-link padding-custom">
                             <?php
@@ -57,7 +57,7 @@
                             ?>
                         </h4>
                     </a>
-                    <p class="custom-text-color data-position">
+                    <p class="data-position">
                         por <?php the_author(); ?><br>
                         <span><?php echo get_the_date('d/m/Y'); ?></span>
                     </p>
