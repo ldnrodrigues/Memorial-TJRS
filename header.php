@@ -1,119 +1,159 @@
-<?php get_header(); ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 
-<div class="container mb-5 my-custom-padding">
-    <div class="row">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <div class="col-md-12">
-                <div id="breadcrumb">
-                    <?php
-                    if (function_exists('yoast_breadcrumb')) {
-                        yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-                    }
-                    ?>
-                </div>
+<head>
 
-                <h1 class="mb-4"><?php the_title(); ?></h1>
+    <meta <?php bloginfo('charset'); ?>>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-                <!-- hr visível apenas em dispositivos desktop -->
-                <hr class="d-none d-sm-block" style="border-top: 2px solid red;">
+    <!--Style.css-->
+    <link href="<?php bloginfo('template_url'); ?>/style.css" rel="stylesheet">
 
-                <!-- hr visível apenas em dispositivos móveis -->
-                <hr class="d-block d-sm-none custom-hr" style="border-top: 4px solid red;">
+    <!--Bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-                    <?php the_content(); ?>
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-                    <h1 class="data-position-2 mt-3">
-                        Publicado por: <?php the_author(); ?><br>
-                        <span>Data: <?php echo get_the_date('d/m/Y'); ?></span>
-                    </h1>
+    <!--Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-                    <div class="share-buttons mt-2 mb-1">
-                        <h1 class="data-position-2">Compartilhe!</h1>
-                    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 
-                    <div class="icones-sociais d-flex">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Facebook Icon.png" width="24" height="24" alt="facebook logo">
-                        </a>
-                        <a href="http://www.instagram.com/memorialtjrs" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Instagram Icon.png" width="24" height="24" alt="instagram logo">
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank">
-                            <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/X Icon.png" width="24" height="24" alt="twitter logo">
-                        </a>
-                    </div>
+    <?php wp_head(); ?>
+    
+</head>
 
-                </div>
+<body>
 
-            <?php endwhile; ?>
-        <?php else : get_404_template(); endif; ?>
+<!-- barra de acessibilidade -->
+<?php include(get_template_directory() . '/barra-acessibilidade.php'); ?>
 
-        <!-- hr visível apenas em dispositivos desktop -->
-        <hr class="hr-text d-none d-sm-block mt-3" data-content="FIM DA NOTÍCIA">
-
-        <!-- hr visível apenas em dispositivos móveis -->
-        <hr class="hr-text d-block d-sm-none mt-4" data-content="FIM DA NOTÍCIA">
-
-        <div class="recent-news">
-            <a href="#"></a><h3 class="col-12 mb-3">Mais Recentes</h3>
+<!-- Header -->
+<div class="container-fluid navbar__atalhos">
+    <div class="container-topo">
+        <div class="first-container">
+		    <div style="position: relative!important; width:100%!important; height: 40px!important; font-size: 10pt!important;">
+			    <div>
+				<label style="margin-top: 10px;"><a href="http://transparencia.tjrs.jus.br/" target="_blank" title="Transpar&ecirc;ncia" class="hot_sites">Transpar&ecirc;ncia</a></label>
+				<label style="margin-left: 20px;"><a href="https://www.tjrs.jus.br/novo/institucional/transparencia/ouvidoria/" target="_blank" title="Ouvidoria" class="hot_sites">Ouvidoria</a></label>
+				<label style="margin-left: 20px;"><a href=" https://www.tjrs.jus.br/novo/processos-e-servicos/servicos-processuais/balcao-virtual/" target="_blank" title="Balc&atilde;o Virtual" class="hot_sites">Balc&atilde;o Virtual</a></label>
+				<label style="margin-left: 20px;"><a href="http://www.agenciaradioweb.com.br/novosite4/themis/index.php" target="_blank" title="Rádio Themis" class="hot_sites">R&aacute;dio Themis</a></label>
+				<label style="margin-left: 20px;" class="link-informativo-eletronico"><a href="https://www.tjrs.jus.br/novo/comunicacao/noticias-do-tjrs/informativo-eletronico/" target="_blank" title="Informativo" class="hot_sites">Informativo</a></label>
+				<label style="margin-left: 20px;"><a href="https://www.tjrs.jus.br/novo/comunicacao/noticias-do-tjrs/justica-gaucha-na-tv/" target="_blank" title="Justi&ccedil;a Ga&uacute;cha na TV" class="hot_sites">Justi&ccedil;a Ga&uacute;cha na TV</a></label>
+				<label style="margin-left: 20px;" class="link-tjrs-na-midia"><a href="https://www.tjrs.jus.br/novo/comunicacao/tjrs-e-a-imprensa/clipping/" target="_blank" title="TJRS na M&iacute;dia" class="hot_sites">TJRS na M&iacute;dia</a></label>
+			</div>
         </div>
-
-            <?php
-            $args = array(
-                'post_type'      => 'post',
-                'posts_per_page' => 3,
-                'orderby'        => 'date',
-                'order'          => 'DESC'
-            );
-
-            $recent_posts = new WP_Query($args);
-
-            if ($recent_posts->have_posts()) :
-                while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
-                    <div class="col-md-4 mb-3 mt-3 d-flex justify-content-center">
-                        <div class="card" style="width:400px">
-                            <div class="card-noticias">
-                                <div class="card-thumbnail">
-                                    <a href="<?php echo get_permalink(); ?>" id="image-zoom">
-                                        <?php the_post_thumbnail('custom-thumbnail-size', array('class' => 'img-fluid')); ?>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="card-body">
-                                <a href="<?php the_permalink(); ?>">
-                                    <h4 class="title-link-2">
-                                        <?php
-                                        $title = get_the_title();
-                                        $max_title_length = 56;
-                                        if (mb_strlen($title) > $max_title_length) {
-                                            $title = mb_substr($title, 0, $max_title_length) . '...';
-                                        }
-                                        echo '<p>' . $title . '</p>';
-                                        ?>
-                                    </h4>
-                                </a>
-                                <p class="data-position-2">
-                                    por <?php the_author(); ?><br>
-                                    <span><?php echo get_the_date('d/m/Y'); ?></span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endwhile;
-                wp_reset_postdata();
-            else : ?>
-                <p class="col-12">Nenhum post encontrado.</p>
-            <?php endif; ?>
-
-    <div class="d-flex justify-content-center">
-        <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/noticias/"><button class="btn btn-lg" type="button" id="botao-noticias-2">Ver Mais Notícias</button></a>
     </div>
+        <div class="icones-container">
+            <div class="icones">
 
-    <!-- /.row -->
+                <a class="navbar-brand" href="https://www.facebook.com/memorialtjrs" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Facebook Icon.png" width="22" height="22" alt="Facebook Logo">
+                </a>
+                <a class="navbar-brand" href="https://www.instagram.com/memorialtjrs/" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Instagram Icon.png" width="22" height="22" alt="Instagram Logo">
+                </a>
+                <a class="navbar-brand" href="https://www.youtube.com/c/MemorialdoJudiciariodoRioGrandedoSul" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Youtube Icon.png" width="24" height="24" alt="Youtube Logo">
+                </a>
+                <a class="navbar-brand" href="http://twitter.com/tjrsoficial" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/X Icon.png" width="24" height="24" alt="X Logo">
+                </a>
+                <a href="https://soundcloud.com/user-891322221" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Soundcloud.png" width="25" height="25" alt="soundcloud logo">
+                </a>
+                <a class="navbar-brand" href="https://open.spotify.com/show/7uBe18SphskTPyeCKHAI4V" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Spotify Icon.png" width="24" height="24" alt="Spotify Logo">
+                </a>
+                <a class="navbar-brand" href="https://www.flickr.com/photos/tjrsoficial/albums" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/Flickr Icon.png" width="24" height="24" alt="Flickr Logo">
+                </a>
+                <a class="navbar-brand" href="https://www.linkedin.com/company/tjrs" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Icones/LinkedIn Icon.png" width="24" height="24" alt="LinkedIn Logo">
+                </a>
+
+            </div>
+        </div>
     </div>
-
-<!-- /.container -->
 </div>
 
-<?php get_footer(); ?>
+<!-- Banner -->
+    <div class="banner-image">
+        <a href="https://www.hml.tjrs.jus.br/novo/memorial-tjrs/">
+            <img src="<?php echo get_template_directory_uri(); ?>/Imagens/Banner/Banner-Memorial.png" class="img-fluid">
+        </a>
+    </div>
+
+    <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark desktop-navbar" role="navigation">
+            <div class="container" id="menu">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand text-expanded" href="<?php echo get_site_url(); ?>/index.php"><img src="<?php echo get_template_directory_uri(); ?>/Imagens/Logos/Logo Memorial.png" class="memorial-icon img-fluid"></a>
+
+            <!-- Código do botão de abrir e fechar nav no mobile -->
+            <label class="collapsed hamburger" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <input type="checkbox">
+                    <svg viewBox="0 0 32 32">
+                        <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                        <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
+
+            <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'principal',
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'collapse navbar-collapse justify-content-center',
+                'container_id'      => 'bs-example-navbar-collapse-1',
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                'walker'            => new WP_Bootstrap_Navwalker(),
+            ) );
+            ?>
+
+        </div>
+    </nav>
+
+<script>
+var lastScrollTop = 0;
+
+function handleScroll() {
+    // Verifica se a largura da tela é menor que 1024 pixels (dispositivos móveis)
+    if (window.innerWidth < 1024) {
+        var st = $(this).scrollTop();
+        var navbar = $('.navbar');
+
+        if (st > lastScrollTop) {
+            // Rolou para baixo
+            navbar.fadeOut('fast');
+        } else {
+            // Rolou para cima
+            if (st === 0) {
+                navbar.removeClass('fixed-top').fadeIn('fast');
+            } else {
+                navbar.addClass('fixed-top').fadeIn('fast');
+            }
+        }
+        lastScrollTop = st;
+    } else {
+        // Se a largura da tela for maior ou igual a 1024 pixels, remova a classe fixa
+        $('.navbar').removeClass('fixed-top');
+    }
+}
+// Chamando a função no carregamento da página e no evento de rolagem e redimensionamento
+$(document).ready(function () {
+    handleScroll();
+
+    $(window).on('scroll resize', function () {
+        handleScroll();
+    });
+});
+</script>
+
+</body>
