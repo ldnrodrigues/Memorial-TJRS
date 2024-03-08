@@ -21,14 +21,9 @@ Tags: Memorial, Museu, História
 }
 
 @media (max-width: 761px) {
-    #custom-carousel {
-        margin-bottom: -30px;
-    }
-
     .carousel-inner .carousel-item img {
-        width: 750px;
-        height: 193px; 
-        object-fit: cover;
+        width: 640px;
+        height: 640px; 
     }
 }
 
