@@ -1,16 +1,3 @@
-/*
-Theme Name: Memorial TJRS
-Theme URI:
-Author: Tribunal de Justiça do Estado do Rio Grande do Sul
-Author URI: https://www.tjrs.jus.br
-Description: Site do Memorial do Rio Grande do Sul.
-Version: 1.0
-Text Domain: memorial-tjrs
-Tags: Memorial, Museu, História
-*/
-
-/*CSS da página de notícia */
-
 #title-link {
     text-decoration: none;
     letter-spacing: -1px;
@@ -25,10 +12,6 @@ Tags: Memorial, Museu, História
 
 .recentes {
     font-weight: bold;
-}
-
-.custom-text-color {
-    color: #8B0000;
 }
 
 #image-zoom {
@@ -91,13 +74,13 @@ Tags: Memorial, Museu, História
 }
 
 .post-thumbnail img {
-    width: 720px !important;
-    height: 420px !important;
+    width: 800px;
+    height: 450px;
 }
 
 .card-thumbnail img {
-    width: 450px !important;
-    height: 300px !important;
+    width: 450px;
+    height: 300px;
 }
 
 .padding-custom {
@@ -107,6 +90,8 @@ Tags: Memorial, Museu, História
 .data-position {
     padding-left: 10px;
 }
+
+/* Estilos da página inicial */
 
 @media (max-width: 991px) {
     .recentes {
@@ -120,24 +105,15 @@ Tags: Memorial, Museu, História
     }
     
     .post-thumbnail img {
-        width: 45   0px !important;
-        height: 320px !important;
-        display: block; /* Necessário para o margin funcionar */
-        margin-left: auto; /* aqui */
-        margin-right: auto; /* e aqui */
-    }
-    
-    .card-thumbnail img {
-        width: 515px !important;
-        height: 310px !important;
+        width: 400px;
+        height: 400px;
+        display: block;
+        margin-left: auto; 
+        margin-right: auto; 
     }
 
     .custom-padding {
         padding-top: 20px;
-        padding-left: 20px;
-    }
-
-    .custom-text-color {
         padding-left: 20px;
     }
 
@@ -159,12 +135,26 @@ Tags: Memorial, Museu, História
         font-size: 20px;
     }
 
+    .title-link-2 {
+        color: #000000;
+        transition: color 0.3s;
+        text-decoration: none;
+        letter-spacing: -1px;
+        margin-bottom: -10px;
+        font-size: 20px;
+    }
+
     .title-link:hover {
         color: #ff0000;
         text-decoration: underline;
     }
 
-    .card {
+    .title-link-2:hover {
+        color: #ff0000;
+        text-decoration: underline;
+    }
+
+    .card-1 {
         border: 1px solid #ddd;
         transition: box-shadow 0.3s;
         position: relative;
@@ -172,11 +162,11 @@ Tags: Memorial, Museu, História
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    .card:hover {
+    .card-1:hover {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
-    .card::before {
+    .card-1::before {
         content: '';
         position: absolute;
         top: 0;
@@ -193,7 +183,7 @@ Tags: Memorial, Museu, História
         position: relative;
     }
 
-    .card-body {
+    .card-body-1 {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -208,10 +198,49 @@ Tags: Memorial, Museu, História
         margin-bottom: 0px;
     }
 
+    .data-position-2 {
+        color: #8B0000;
+        font-size: 14.3px;
+        margin-bottom: 0px;
+    }
+
     .custom-hr {
         border-top: 2px solid #8B0000;
     }
 
+    .hr-text {
+        line-height: 1em;
+        position: relative;
+        outline: 0;
+        border: 0;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        text-align: center;
+        height: 1.5em;
+        opacity: .8;
+        font-size: 20px;
+    }
+
+    .hr-text:before {
+        content: '';
+        background: linear-gradient(to right, transparent, #8B0000, transparent);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+    }
+
+    .hr-text:after {
+        content: attr(data-content);
+        position: relative;
+        display: inline-block;
+        color: #000000;
+        padding: 0 .5em;
+        line-height: 1.5em;
+        color: #000000;
+        background-color: #fcfcfa;
+    }
 
 
 
