@@ -25,11 +25,10 @@ register_nav_menus( array(
 
 //Definir as imagens de destaque
 add_theme_support('post-thumbnails');
-//set_post_thumbnail_size( 300, 200, true );
 
 //Definir o tamanho do Resumo
 add_filter( 'excerpt_length', function($length) {
-    return 80;
+    return 100;
 });
 
 add_action( 'after_setup_theme', 'theme_setup' );
@@ -47,19 +46,6 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 
-// No seu arquivo functions.php
-
-function trocar_header_para_mobile() {
-    // Verifica se o usuário está em um dispositivo móvel
-    if (wp_is_mobile()) {
-        // Carrega o arquivo header2.php
-        get_template_part('header2');
-    }
-}
-
-// Adiciona a ação para chamar a função no gancho 'wp_head'
-add_action('wp_head', 'trocar_header_para_mobile');
-
 function create_post_type_carrossel() {
     register_post_type('banners',
         array(
@@ -76,30 +62,36 @@ function create_post_type_carrossel() {
             'rewrite' => array('slug' => 'banners'),
         )
     );
+
+    // Adicionar suporte para imagens do carrossel mobile
+    register_post_type('mobile_banners',
+        array(
+            'labels' => array(
+                'name' => __('Carrossel Mobile'),
+                'singular_name' => __('Carrossel Mobile')
+            ),
+            'supports' => array(
+                'title', 'editor', 'thumbnail'
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'menu_icon' => 'dashicons-images-alt2',
+            'rewrite' => array('slug' => 'mobile_banners'),
+        )
+    );
 }
 
+add_action('init', 'create_post_type_mobile_banners');
 add_action('init', 'create_post_type_carrossel');
 
-function get_carosel() {
-    ob_start(); // Inicia o buffer de saída
-    ?>
-    <div class="container-fluid">
-        <div class="col mb-5">
-            <!-- Coloque aqui o código do carrossel, sem duplicar o código que já está acima -->
-        </div>
-    </div>
-    <?php
-    return ob_get_clean(); // Retorna o conteúdo do buffer de saída
-}
-
-add_shortcode('carrossel', 'get_carosel');
-
+// Adiciona o campo de link para o banner no painel do Wordpress
 function add_custom_meta_boxes() {
     add_meta_box(
         'banner_link_box',
         'Link do Banner',
         'render_banner_link_box',
         'banners',
+        'mobile_banners',
         'normal',
         'high'
     );
@@ -126,6 +118,40 @@ function save_custom_meta_data($post_id) {
 
 add_action('save_post', 'save_custom_meta_data');
 add_action('add_meta_boxes', 'add_custom_meta_boxes');
+
+// Adiciona o campo de link para o banner-mobile no painel do Wordpress
+function add_custom_mobile_meta_boxes() {
+    add_meta_box(
+        'mobile_banner_link_box',
+        'Link do Banner (Mobile)',
+        'render_mobile_banner_link_box',
+        'mobile_banners',
+        'normal',
+        'high'
+    );
+}
+
+function render_mobile_banner_link_box($post) {
+    // Adicione HTML para o campo de link do banner móvel aqui
+    $mobile_banner_link = get_post_meta($post->ID, 'link_mobile_banner', true);
+    ?>
+    <label for="mobile_banner_link">Link do Banner (Mobile):</label>
+    <input type="text" id="mobile_banner_link" name="mobile_banner_link" value="<?php echo esc_attr($mobile_banner_link); ?>" style="width: 100%;" />
+    <?php
+}
+
+function save_custom_mobile_meta_data($post_id) {
+    if (array_key_exists('mobile_banner_link', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'link_mobile_banner',
+            sanitize_text_field($_POST['mobile_banner_link'])
+        );
+    }
+}
+
+add_action('save_post', 'save_custom_mobile_meta_data');
+add_action('add_meta_boxes', 'add_custom_mobile_meta_boxes');
 
 // Definir o estilo da paginação
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
